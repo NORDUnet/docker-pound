@@ -1,12 +1,12 @@
-
+NAME=pound
 VER=latest
 
 all: build push
 build:
-	docker build --no-cache=true -t pound .
-	docker tag -f pound docker.sunet.se/pound:$(VER)
+	docker build --no-cache=true -t $NAME .
+	docker tag -f $NAME docker.sunet.se/$NAME:$(VER)
 update:
-	docker build -t pound .
-	docker tag -f pound docker.sunet.se/pound:$(VER)
+	docker build -t $NAME .
+	docker tag -f $NAME docker.sunet.se/$NAME:$(VER)
 push:
-	docker push docker.sunet.se/pound:$(VER)
+	docker push docker.sunet.se/$NAME:$(VER)
