@@ -1,10 +1,8 @@
-FROM ubuntu:14.04
+FROM debian:stretch
 MAINTAINER leifj@sunet.se
-RUN apt-get -q update
-RUN apt-get -y upgrade
+RUN apt-get update
+RUN apt-get -y dist-upgrade
 RUN apt-get install -y pound ssl-cert
-ADD pound_2.6-7_amd64.deb /pound_2.6-7_amd64.deb
-RUN dpkg -i /pound_2.6-7_amd64.deb
 ADD start.sh /start.sh
 RUN chmod a+rx /start.sh
 VOLUME /etc/ssl
