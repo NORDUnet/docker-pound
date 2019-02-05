@@ -60,4 +60,4 @@ cat>>/etc/pound/pound.cfg<<EOF
 End
 EOF
 
-/usr/sbin/pound
+exec /usr/sbin/pound
