@@ -19,6 +19,8 @@ fi
 
 mkdir -p /var/run/pound
 
+THREADS=${THREADS:-400}
+
 cat>/etc/pound/pound.cfg<<EOF
 User            "www-data"
 Group           "www-data"
@@ -26,6 +28,7 @@ LogLevel        3
 Alive           30
 Control         "/var/run/pound/poundctl.socket"
 Daemon          0
+Threads         ${THREADS}
 
 ListenHTTPS
     xHTTP 1
